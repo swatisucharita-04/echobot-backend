@@ -1,6 +1,3 @@
-Absolutely! Here's a **complete, ready-to-copy `README.md`** that you can paste directly into VS Code:
-
-```markdown
 # echobot-backend
 Backend for EchoBot – Conversational AI using STT, LLM, and TTS
 
