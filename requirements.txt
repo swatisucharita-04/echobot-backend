@@ -8,7 +8,7 @@ python-dotenv==1.1.1
 playsound==1.2.2
 pydub==0.25.1
 websockets==11.0.3
-assemblyai==1.1.1
+assemblyai==0.43.1
 
 # Google Generative AI
 google-generativeai==0.8.5
@@ -32,4 +32,5 @@ attrs==25.3.0
 anyio==4.10.0
 yarl==1.20.1
 multidict==6.6.4
+
 
