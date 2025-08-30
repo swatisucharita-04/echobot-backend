@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchoBot - Modern Robot Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Mobile Sidebar Toggle -->
+        <button class="mobile-toggle" id="sidebarToggle"><i class="fas fa-cog"></i></button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>EchoBot Settings</h2>
+            </div>
+
+            <!-- API Configuration (Murf, Gemini, AssemblyAI) -->
+            <div class="sidebar-section">
+                <h3>API Configuration</h3>
+
+                <div class="settings-item">
+                    <label for="murfApi">Murf API Key</label>
+                    <input type="password" id="murfApi" placeholder="Enter your Murf API key" />
+                </div>
+
+                <div class="settings-item">
+                    <label for="assemblyApi">AssemblyAI API Key</label>
+                    <input type="password" id="assemblyApi" placeholder="Enter your AssemblyAI API key" />
+                </div>
+
+                <div class="settings-item">
+                    <label for="geminiApi">Gemini API Key</label>
+                    <input type="password" id="geminiApi" placeholder="Enter your Gemini API key" />
+                </div>
+
+                <button id="saveApiKeys" class="save-btn">Save Keys</button>
+            </div>
+
+            <!-- Preferences -->
+            <div class="sidebar-section">
+                <h3>Preferences</h3>
+                <div class="toggle-label">
+                    <span>Voice Responses</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="ttsToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-label">
+                    <span>Auto-Connect</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="autoConnectToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-label">
+                    <span>Message Sounds</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="soundsToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Feature Controls -->
+            <div class="sidebar-section">
+                <h3>Feature Controls</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4><i class="fas fa-robot"></i> Mood Detection</h4>
+                        <p>Enable emotion analysis in conversations</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><i class="fas fa-language"></i> Translation</h4>
+                        <p>Real-time message translation</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><i class="fas fa-history"></i> Conversation History</h4>
+                        <p>Save and recall past conversations</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><i class="fas fa-shield-alt"></i> Privacy Mode</h4>
+                        <p>Enhanced data protection</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extra Skills -->
+            <div class="sidebar-section">
+                <h3>Extra Skills</h3>
+                <button id="quoteBtn">Get Quote</button>
+                <button id="newsBtn">Get News</button>
+                <button id="weatherBtn">Get Weather</button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-content">
+            <header class="chat-header">
+                <div class="header-left">
+                    <div class="robot-avatar">🤖</div>
+                    <div class="header-info">
+                        <h1>EchoBot Assistant</h1>
+                        <p>Your friendly AI companion</p>
+                    </div>
+                </div>
+                <div class="persona-selector">
+                    <label for="personaSelect">Persona:</label>
+                    <select id="personaSelect">
+                        <option value="Robot Assistant">🤖 Robot</option>
+                        <option value="Pirate">🏴‍☠️ Pirate</option>
+                        <option value="Cowboy">🤠 Cowboy</option>
+                    </select>
+                </div>
+            </header>
+
+            <!-- Status Message -->
+            <div id="statusMessage" class="status-message"></div>
+
+            <!-- Chat Window -->
+            <main id="chatWindow" class="chat-window">
+                <div class="message bot-message">
+                    Hello! I'm EchoBot, your friendly AI assistant. How can I help you today?
+                    <span class="message-time">Just now</span>
+                </div>
+                <div class="typing-indicator">
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Chat Input Area -->
+            <footer class="chat-input-area">
+                <input id="textInput" type="text" placeholder="Type a message..." autocomplete="off">
+                <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+                <button id="voiceBtn"><i id="micIcon" class="fas fa-microphone"></i></button>
+            </footer>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
