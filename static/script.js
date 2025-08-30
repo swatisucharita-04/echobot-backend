@@ -117,11 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // ---- WebSocket setup ----
       let wsUrl;
-      if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-        wsUrl = "ws://127.0.0.1:8000/ws"; // Local
-      } else {
-        wsUrl = "wss://echobot-api.onrender.com/ws"; // Render (deployed)
-      }
+      const protocol = location.protocol ==='https:'? 'wss:':'ws:';
+      wsUrl = `${protocol}//${location.host}/ws`
+      // if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+      //   wsUrl = "ws://127.0.0.1:8000/ws"; // Local
+      // } else {
+      //   wsUrl = "wss://echobot-api.onrender.com/ws"; // Render (deployed)
+      // }
       ws = new WebSocket(wsUrl);
 
       ws.onopen = () => {
